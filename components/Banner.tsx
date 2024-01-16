@@ -30,14 +30,17 @@ const Banner = () => {
         I am an aspiring full stack web developer. I have a strong foundation in front-end & back-end developement and am skilled in creating user-friendly and responsive web application using React and its ecosystem.
         {" "}
       </motion.p>
+      <a href="https://github.com/AbhishekPurty" target="_blank">
       <motion.button 
         initial={{ y: 10, opacity: 0 }} 
         animate={{ y: 0, opacity: 1 }} 
         transition={{ duration: 0.5, delay: 0.9 }}
         className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300"
+        href 
       >
         Check out my project!
       </motion.button>
+      </a>
     </section>
   )
 }
