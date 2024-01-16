@@ -36,7 +36,6 @@ const Banner = () => {
         animate={{ y: 0, opacity: 1 }} 
         transition={{ duration: 0.5, delay: 0.9 }}
         className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300"
-        href 
       >
         Check out my project!
       </motion.button>
