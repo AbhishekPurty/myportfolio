@@ -27,7 +27,7 @@ const Banner = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="text-base md:max-w-[650px] text-textDark font-medium">
         {" "}
-        I am an aspiring full stack web developer. I have a strong foundation in front-end & back-end developement and am skilled in creating user-friendly and responsive web application using React and its ecosystem.
+        I am an aspiring full stack web developer. I have a strong foundation in front-end & back-end development and am skilled in creating user-friendly and responsive web application using React and its ecosystem.
         {" "}
       </motion.p>
       <a href="https://github.com/AbhishekPurty" target="_blank">
