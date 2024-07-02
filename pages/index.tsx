@@ -9,16 +9,32 @@ import Experience from '@/components/Experience'
 import Projects from '@/components/Projects'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import Loader from '@/components/Loader'
+import animationData from '@/public/LoaderAnimation.json'
+import { useState, useEffect } from 'react'
 
 export default function Home() {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(()=> {
+    setTimeout(()=> {
+      setLoading(false);
+    }, 6000);
+  }, []);
+
   return (
     <>
     <Head>
       <title>Abhishek Purty</title>
       <link rel="icon" href="/logo.ico" />
     </Head>
+    { loading ? (
+        <Loader animationData={animationData} />
+      ): (
     <div className="w-full h-screen font-bodyFont bg-bodyColor text-textLight overflow-x-hidden overflow-y-scroll scrollbar scrollbar-track-textDark/20 scrollbar-thumb-textDark/60">
       <Navbar />
+      
       <div className="w-full h-[88vh] xl:flex items-center gap-20 justify-between">
         <motion.div
          initial={{ opacity: 0 }}
@@ -46,6 +62,7 @@ export default function Home() {
         </motion.div>
       </div>
     </div>
+    )}
     </>
   )
 }
