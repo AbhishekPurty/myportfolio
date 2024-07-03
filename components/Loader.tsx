@@ -25,8 +25,8 @@ const Loader: React.FC<LoaderProps> = ({ animationData }) => {
   }, [animationData]);
 
   return (
-    <div className="flex items-center justify-center w-full h-screen bg-[#0A192F]">
-      <div ref={containerRef} className=" lg:w-150 lg:h-150" />
+    <div className="flex items-center justify-center bg-[#0A192F]">
+      <div ref={containerRef} className="w-full h-screen" />
     </div>
   );
 };
