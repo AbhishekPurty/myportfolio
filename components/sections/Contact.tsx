@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = () => {
   return (
     <section
@@ -15,10 +13,11 @@ const Contact = () => {
         welcome any inquiries or messages. Whether you have a question, want to connect, or just say
         hi, feel free to reach out, and I will do my best to respond promptly!
       </p>
-      <a href="mailto:abhishekpurty1999@gmail.com">
-        <button className="w-40 h-14 mt-6 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wider hover:bg-hoverColor duration-300">
-          Say Hello
-        </button>
+      <a
+        href="mailto:abhishekpurty1999@gmail.com"
+        className="w-40 h-14 mt-6 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wider hover:bg-hoverColor duration-300 inline-flex items-center justify-center"
+      >
+        Say Hello
       </a>
     </section>
   );

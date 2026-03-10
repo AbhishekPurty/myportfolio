@@ -29,22 +29,21 @@ const Banner = () => {
         transition={{ duration: 0.5, delay: 0.8 }}
         className="text-base md:max-w-[650px] text-textDark font-medium"
       >
-        {" "}
-        I am an aspiring full stack web developer. I have a strong foundation in front-end &
-        back-end development and am skilled in creating user-friendly and responsive web
-        application using React and its ecosystem.
-        {" "}
+        I am an aspiring full-stack web developer. I have a strong foundation in front-end and
+        back-end development and enjoy creating user-friendly, responsive web applications using
+        React and its ecosystem.
       </motion.p>
-      <a href="https://github.com/AbhishekPurty" target="_blank">
-        <motion.button
-          initial={{ y: 10, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.9 }}
-          className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300"
-        >
-          Check out my project!
-        </motion.button>
-      </a>
+      <motion.a
+        initial={{ y: 10, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.9 }}
+        className="w-52 h-14 text-sm font-titleFont border border-textGreen rounded-md text-textGreen tracking-wide hover:bg-hoverColor duration-300 inline-flex items-center justify-center"
+        href="https://github.com/AbhishekPurty"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Check out my projects!
+      </motion.a>
     </section>
   );
 };

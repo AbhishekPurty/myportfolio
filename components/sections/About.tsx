@@ -1,6 +1,19 @@
 import { AiFillThunderbolt } from "react-icons/ai";
 import { SectionTitle } from "@/components/ui";
 
+const technologies = [
+  "HTML",
+  "Tailwind CSS",
+  "JavaScript",
+  "React.js",
+  "TypeScript",
+  "Node.js",
+  "Next.js",
+  "Express.js",
+  "SQL",
+  "MongoDB",
+];
+
 const About = () => {
   return (
     <section
@@ -11,86 +24,30 @@ const About = () => {
       <div className="flex flex-col lgl:flex-row gap-16">
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
           <p>
-            Hello! My name is Abhishek Purty and I enjoy creating things that live on the internet.
-            My interest in web development started back in 2019 when I started my BTECH journey. Me
-            and my friends used to build web application with different tech stacks to explore the
-            different tools invented for building web applications. Thats where I got the urge to
-            learn all kinds of computer languages.
+            Hello! My name is Abhishek Purty, and I enjoy creating things that live on the internet.
+            My interest in web development started in 2019, when I began my B.Tech journey. My
+            friends and I used to build web applications with different tech stacks to explore new
+            tools and frameworks. That is when I developed a strong interest in programming and
+            software development.
           </p>
           <p>
-            Fast-forward to today, and I have made few web app projects of my own and am currently
-            looking to join an organization. I possess a strong ability to quickly adapt to new tools
-            and frameworks. As an avid learner, I am excited about the opportunity to contribute my
-            skills while expanding my knowledge in a professional setting. I understand the
-            importance of collaborative teamwork in achieving project success. My experiences working
-            on group projects and participating in coding competitions have prepared me to contribute
-            effectively within a team environment.
+            Fast-forward to today, I have built several web applications and am currently looking for
+            new opportunities. I adapt quickly to new tools and frameworks, and I enjoy learning as I
+            build. I also value teamwork and collaboration, and my experience in group projects and
+            coding competitions has helped me contribute effectively in team environments.
           </p>
           <p>Here are a few technologies I have been working with recently:</p>
           <ul className="max-w-[450px] text-sm font-titleFont grid grid-cols-2 gap-2 mt-6">
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              HTML
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              TailwindCSS
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              JavaScript
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              ReactJS
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Typescript
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Node.js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Next.js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              Express.js
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              SQL
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-textGreen">
-                <AiFillThunderbolt />
-              </span>
-              MongoDB
-            </li>
+            {technologies.map((tech) => (
+              <li key={tech} className="flex items-center gap-2">
+                <span className="text-textGreen">
+                  <AiFillThunderbolt />
+                </span>
+                {tech}
+              </li>
+            ))}
           </ul>
         </div>
-        <div></div>
       </div>
     </section>
   );
