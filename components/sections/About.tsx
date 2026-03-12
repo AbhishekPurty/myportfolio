@@ -1,5 +1,7 @@
 import { AiFillThunderbolt } from "react-icons/ai";
+import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui";
+import { scrollReveal } from "@/components/animations/scrollReveal";
 
 const technologies = [
   "HTML",
@@ -20,8 +22,10 @@ const About = () => {
       id="about"
       className="max-w-containerSmall mx-auto py-10 lgl:py-32 flex flex-col gap-8"
     >
-      <SectionTitle title="About Me" titleNo="01" />
-      <div className="flex flex-col lgl:flex-row gap-16">
+      <motion.div {...scrollReveal(0.1)}>
+        <SectionTitle title="About Me" titleNo="01" />
+      </motion.div>
+      <motion.div {...scrollReveal(0.2)} className="flex flex-col lgl:flex-row gap-16">
         <div className="w-full lgl:w-2/3 text-base text-textDark font-medium flex flex-col gap-4">
           <p>
             Hello! My name is Abhishek Purty, and I enjoy creating things that live on the internet.
@@ -48,7 +52,7 @@ const About = () => {
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

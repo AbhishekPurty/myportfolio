@@ -1,9 +1,11 @@
 import Image from "next/image";
 import type { StaticImageData } from "next/image";
+import { motion } from "framer-motion";
 import { TbBrandGithub } from "react-icons/tb";
 import { RxOpenInNewWindow } from "react-icons/rx";
 import { bitImg, tidbitsImg, vedexImg } from "@/public/assets";
 import { SectionTitle } from "@/components/ui";
+import { scrollReveal } from "@/components/animations/scrollReveal";
 
 interface Project {
   title: string;
@@ -112,12 +114,18 @@ const ProjectCard = ({ project }: { project: Project }) => {
 const Projects = () => {
   return (
     <section id="project" className="max-w-container mx-auto lgl:px-20 py-24">
-      <SectionTitle title="Some Things I Have Built" titleNo="03" />
+      <motion.div {...scrollReveal(0.1, 0.2)}>
+        <SectionTitle title="Some Things I Have Built" titleNo="03" />
+      </motion.div>
       <div className="w-full flex flex-col items-center justify-between gap-28 mt-10">
-        {projects.map((project) => (
-          <div key={project.title} className="w-full flex flex-col items-center justify-center gap-28 mt-10">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            {...scrollReveal(0.15 + index * 0.1, 0.25)}
+            className="w-full flex flex-col items-center justify-center gap-28 mt-10"
+          >
             <ProjectCard project={project} />
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

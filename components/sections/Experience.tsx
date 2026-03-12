@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { SectionTitle } from "@/components/ui";
 import { Btech, HS, SHS } from "@/components/sections/education";
+import { scrollReveal } from "@/components/animations/scrollReveal";
 
 type EducationTab = "btech" | "shs" | "hs";
 
@@ -15,8 +17,10 @@ const Experience = () => {
 
   return (
     <section id="experience" className="max-w-containerxs mx-auto py-10 lgl:py-24 px-4">
-      <SectionTitle title="Background" titleNo="02" />
-      <div className="w-full mt-10 flex flex-col md:flex-row gap-16">
+      <motion.div {...scrollReveal(0.1)}>
+        <SectionTitle title="Background" titleNo="02" />
+      </motion.div>
+      <motion.div {...scrollReveal(0.2)} className="w-full mt-10 flex flex-col md:flex-row gap-16">
         <ul className="md:w-60 flex flex-col" role="tablist" aria-label="Education background tabs">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
@@ -50,7 +54,7 @@ const Experience = () => {
           {activeTab === "shs" && <SHS />}
           {activeTab === "hs" && <HS />}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
