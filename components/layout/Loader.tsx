@@ -1,27 +1,34 @@
-import { useEffect, useRef } from 'react';
-import lottie from 'lottie-web';
+import { useEffect, useRef } from "react";
 
 interface LoaderProps {
-  animationData: any;
+  animationData: object;
 }
 
 const Loader: React.FC<LoaderProps> = ({ animationData }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (containerRef.current) {
-      const anim = lottie.loadAnimation({
+    let animation: { destroy: () => void } | undefined;
+
+    const initAnimation = async () => {
+      const lottie = (await import("lottie-web")).default;
+
+      if (!containerRef.current) return;
+
+      animation = lottie.loadAnimation({
         container: containerRef.current,
-        renderer: 'svg',
+        renderer: "svg",
         loop: true,
         autoplay: true,
-        animationData: animationData,
+        animationData,
       });
+    };
 
-      return () => {
-        anim.destroy();
-      };
-    }
+    void initAnimation();
+
+    return () => {
+      animation?.destroy();
+    };
   }, [animationData]);
 
   return (
