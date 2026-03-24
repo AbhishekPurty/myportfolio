@@ -1,14 +1,23 @@
 import { useEffect, useRef } from "react";
+import type { AnimationItem } from "lottie-web";
 
 interface LoaderProps {
   animationData: object;
+  onComplete: () => void;
 }
 
-const Loader: React.FC<LoaderProps> = ({ animationData }) => {
+const LOADER_PLAYBACK_SPEED = 1.7;
+
+const Loader: React.FC<LoaderProps> = ({ animationData, onComplete }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let animation: { destroy: () => void } | undefined;
+    let animation: AnimationItem | null = null;
+    let removeCompleteListener: (() => void) | undefined;
+
+    const handleComplete = () => {
+      onComplete();
+    };
 
     const initAnimation = async () => {
       const lottie = (await import("lottie-web")).default;
@@ -18,18 +27,21 @@ const Loader: React.FC<LoaderProps> = ({ animationData }) => {
       animation = lottie.loadAnimation({
         container: containerRef.current,
         renderer: "svg",
-        loop: true,
+        loop: false,
         autoplay: true,
         animationData,
       });
+      animation.setSpeed(LOADER_PLAYBACK_SPEED);
+      removeCompleteListener = animation.addEventListener("complete", handleComplete);
     };
 
     void initAnimation();
 
     return () => {
+      removeCompleteListener?.();
       animation?.destroy();
     };
-  }, [animationData]);
+  }, [animationData, onComplete]);
 
   return (
     <div className="flex items-center justify-center bg-[#0A192F]">
