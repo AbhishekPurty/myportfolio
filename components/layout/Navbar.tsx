@@ -93,7 +93,7 @@ const Navbar = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
             className="px-4 py-2 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300 inline-flex"
-            href="/assets/my_resume.pdf"
+            href="/assets/Abhishek_Purty_SDE.pdf"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -130,7 +130,7 @@ const Navbar = () => {
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6, ease: "easeIn" }}
                   className="w-32 h-10 rounded-md text-textGreen text-[13px] border border-textGreen hover:bg-hoverColor duration-300 inline-flex items-center justify-center"
-                  href="/assets/my_resume.pdf"
+                  href="/assets/Abhishek_Purty_SDE.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

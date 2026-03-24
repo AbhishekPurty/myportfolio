@@ -6,19 +6,21 @@ import { Footer, LeftSide, Loader, Navbar, RightSide } from "@/components/layout
 import { About, Banner, Contact, Experience, Projects } from "@/components/sections";
 import animationData from "@/public/LoaderAnimation.json";
 
+const MAX_LOADER_WAIT_MS = 5000;
+
 export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 6000);
+    }, MAX_LOADER_WAIT_MS);
 
     return () => clearTimeout(timer);
   }, []);
 
   if (loading) {
-    return <Loader animationData={animationData} />;
+    return <Loader animationData={animationData} onComplete={() => setLoading(false)} />;
   }
 
   return (
